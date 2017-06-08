@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/angular.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css"  >
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/stock.js"></script>
+
+<title>Stock Home</title>
+</head>
+<body ng-app="stock">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand "  href="/stock">Stock Home</a>
+    </div>
+
+   
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="/getStock"> Get Stock</a></li>
+        <!-- <li><a href="#">Resistance Ledger</a></li> -->
+       
+      </ul>
+        
+     
+    </div>
+    
+    
+    
+    
+    
+  </div>
+</nav>
+  <div class="container">
+    
+      
+    <div  class="form-group" ng-controller="stockController">
+      
+      <p>List of Companies</p>
+
+        <a id={{company}}  ng-repeat="company in companyList"  ng-click="getCompayStock(this)" class="btn btn-default" ng-href="#"+{{company}} role="button">{{company}}</a>
+
+    </div>
+    
+      
+  </div>
+
+</body>
+
+</html>
