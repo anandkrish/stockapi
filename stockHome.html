@@ -49,7 +49,50 @@
       
       <p>List of Companies</p>
 
-        <a id={{company}}  ng-repeat="company in companyList"  ng-click="getCompayStock(this)" class="btn btn-default" ng-href="#"+{{company}} role="button">{{company}}</a>
+        <a id={{company}}  ng-repeat="company in companyList"  ng-click="getCompayStock(this)" class="btn btn-default" ng-href="#" role="button">{{company}} </a>
+        <hr>
+        <p>Search List</p>
+        <a ng-repeat="sCom in searchList" class="btn btn-default" role="button" >{{sCom}}</a>
+        <hr>
+
+        <table class="table table-bordered table-hover" >
+          <caption>Real Time Stock Data</caption>
+          <thead>
+            <tr>
+              
+              <th>Ticker</th>
+              <th>Exchange</th>
+              <th>Last Price</th>
+              <th>Last Trade Time</th>
+              <th>Price</th>
+              <th>Last Trade Time Formatted</th>
+              <th>Last Trade Date/Time</th>
+              <th>Change</th>
+              <th>Change Percentage</th>
+              <th>After Hours Last Price</th>
+              <th>Dividend</th>
+              <th>Yield</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="stock in stockData">
+             
+              <td>{{stock.t}}</td>
+              <td>{{stock.l}}</td>
+              <td>{{stock.ltt}}</td>
+              <td>{{stock.l}}</td>
+              <td>{{stock.lt}}</td>
+              <td>{{stock.lt_dts}}</td>
+              <td>{{stock.c}}</td>
+              <td>{{stock.cp}}</td>
+              <td>{{stock.el}}</td>
+              <td>{{stock.e}}</td>
+              <td>{{stock.div}}</td>
+              <td>{{stock.yld}}</td>
+            </tr>
+          </tbody>
+        </table>
+        
 
     </div>
     
