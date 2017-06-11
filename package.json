@@ -1,0 +1,9 @@
+{
+  "name" : "stockAPI",
+  "description" : "Web API which displays the real time stock details from the Google  Stock API.",
+  "homepage" : "http://localhost:8082/stock",
+  "author" : "Anand K",
+  "repository" : {"type": "git", "url": "https://github.com/anandkrish/stockapi"},
+  "main" : "server.js",
+  
+}

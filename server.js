@@ -16,5 +16,9 @@ var server=app.listen(8082,function(){
 app.get('/stock',function(req,res){
 	res.sendFile(__dirname+'/stockHome.html');
 });
+getStock
 
+app.get('getStock',function(req,res)){
+	res
+}
 app.use(express.static(__dirname + '/static'));
