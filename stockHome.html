@@ -55,7 +55,7 @@
         <a ng-repeat="sCom in searchList" class="btn btn-default" role="button" >{{sCom}}</a>
         <hr>
 
-        <table class="table table-bordered table-hover" >
+        <table class="table table-bordered table-hover table-striped" >
           <caption>Real Time Stock Data</caption>
           <thead>
             <tr>
@@ -78,6 +78,7 @@
             <tr ng-repeat="stock in stockData">
              
               <td>{{stock.t}}</td>
+              <td>{{stock.e}}</td>
               <td>{{stock.l}}</td>
               <td>{{stock.ltt}}</td>
               <td>{{stock.l}}</td>
@@ -86,7 +87,6 @@
               <td>{{stock.c}}</td>
               <td>{{stock.cp}}</td>
               <td>{{stock.el}}</td>
-              <td>{{stock.e}}</td>
               <td>{{stock.div}}</td>
               <td>{{stock.yld}}</td>
             </tr>

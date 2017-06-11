@@ -5,10 +5,12 @@ stock.controller('stockController', ['$scope','$http', function($scope,$http){
 
 	$scope.companyList = stockList;
 	$scope.searchList= [];
+	$scope.stockData=[];
 
 	$scope.getCompayStock= function(){
 		var baseUrl='http://finance.google.com/finance/info?client=ig&q=NASDAQ%3A';
 		var com = this.company;
+
 		
 		$scope.companyList = removeElem($scope.companyList,com);
 		$scope.searchList.push(com);
@@ -16,11 +18,12 @@ stock.controller('stockController', ['$scope','$http', function($scope,$http){
 
 			$http({
 				method: 'GET',
-				url: baseUrl+$scope.searchList
+				url: baseUrl+com
 
 			}).then(function onSuccess(response){
 				var stockArry=response.data.replace("//","");			
-				$scope.stockData=JSON.parse(stockArry);
+				$scope.stockData=$scope.stockData.concat(JSON.parse(stockArry));
+				
 				
 
 			},function onError(response){
@@ -34,7 +37,7 @@ stock.controller('stockController', ['$scope','$http', function($scope,$http){
 		return elemArr;
 
 	}
-	f
+	
 	
 }]);
 
